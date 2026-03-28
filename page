@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protech Nexus Group | Cerrajería, Plomería y Electricidad a Domicilio en Bogotá 24h</title>
+<meta name="description" content="Servicios técnicos a domicilio en Bogotá y Cundinamarca. Cerrajería 24 horas, plomería, electricidad, limpieza de tanques y más. Técnicos en nómina, garantía escrita. Llame ahora.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand-dark: #0a1628;
+    --brand-navy: #0f2044;
+    --brand-blue: #1a3a6e;
+    --brand-accent: #f5a623;
+    --brand-green: #1db954;
+    --brand-light: #f4f6fa;
+    --brand-white: #ffffff;
+    --text-main: #1c2b3a;
+    --text-muted: #5a6a7a;
+    --border: #dde3ed;
+    --radius: 6px;
+    --shadow: 0 2px 16px rgba(10,22,40,0.10);
+    --shadow-lg: 0 8px 40px rgba(10,22,40,0.15);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Barlow', sans-serif; color: var(--text-main); background: var(--brand-white); line-height: 1.6; font-size: 16px; }
+  h1,h2,h3,h4 { font-family: 'Barlow Condensed', sans-serif; line-height: 1.15; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--brand-dark);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5vw; height: 64px;
+  }
+  .nav-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.35rem; font-weight: 800;
+    color: var(--brand-white); letter-spacing: 0.5px;
+  }
+  .nav-logo span { color: var(--brand-accent); }
+  .nav-links { display: flex; gap: 0; }
+  .nav-links a {
+    color: rgba(255,255,255,0.8); font-size: 0.85rem; font-weight: 500;
+    padding: 0 14px; line-height: 64px; transition: color 0.2s;
+    letter-spacing: 0.3px;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--brand-accent); }
+  .nav-cta {
+    background: var(--brand-green); color: white;
+    padding: 8px 18px; border-radius: var(--radius);
+    font-weight: 600; font-size: 0.85rem;
+    transition: background 0.2s; white-space: nowrap;
+  }
+  .nav-cta:hover { background: #17a347; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; }
+
+  /* ─── PAGES ─── */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-navy) 60%, #1a2e50 100%);
+    min-height: 580px; display: flex; align-items: center;
+    padding: 80px 5vw 60px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 1;
+  }
+  .hero-content { position: relative; max-width: 780px; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(245,166,35,0.15); border: 1px solid rgba(245,166,35,0.4);
+    color: var(--brand-accent); font-size: 0.8rem; font-weight: 600;
+    padding: 5px 14px; border-radius: 20px; margin-bottom: 22px;
+    letter-spacing: 0.8px; text-transform: uppercase;
+  }
+  .hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 800;
+    color: var(--brand-white); margin-bottom: 20px;
+    line-height: 1.1;
+  }
+  .hero h1 span { color: var(--brand-accent); }
+  .hero-sub {
+    font-size: 1.05rem; color: rgba(255,255,255,0.78);
+    max-width: 640px; margin-bottom: 36px; line-height: 1.7;
+  }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--brand-green); color: white;
+    padding: 14px 28px; border-radius: var(--radius);
+    font-weight: 700; font-size: 1rem; font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.5px; transition: all 0.2s; cursor: pointer; border: none;
+    text-transform: uppercase;
+  }
+  .btn-primary:hover { background: #17a347; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(29,185,84,0.35); }
+  .btn-secondary {
+    background: transparent; color: white;
+    padding: 14px 28px; border-radius: var(--radius);
+    font-weight: 700; font-size: 1rem; font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.5px; transition: all 0.2s; cursor: pointer;
+    border: 2px solid rgba(255,255,255,0.4); text-transform: uppercase;
+  }
+  .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.08); }
+
+  /* ─── TRUST BAR ─── */
+  .trust-bar {
+    background: var(--brand-accent);
+    padding: 32px 5vw;
+  }
+  .trust-grid {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  }
+  .trust-item { text-align: center; }
+  .trust-icon { font-size: 2rem; margin-bottom: 10px; }
+  .trust-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.05rem; font-weight: 700; color: var(--brand-dark);
+    margin-bottom: 4px;
+  }
+  .trust-desc { font-size: 0.82rem; color: rgba(10,22,40,0.7); }
+
+  /* ─── SECTIONS ─── */
+  .section { padding: 72px 5vw; }
+  .section-light { background: var(--brand-light); }
+  .section-dark { background: var(--brand-dark); }
+  .section-navy { background: var(--brand-navy); }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--brand-accent);
+    margin-bottom: 10px; display: block;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800;
+    color: var(--text-main); margin-bottom: 16px;
+  }
+  .section-title.white { color: var(--brand-white); }
+  .section-desc { color: var(--text-muted); font-size: 1rem; max-width: 620px; margin-bottom: 48px; }
+  .section-desc.white { color: rgba(255,255,255,0.7); }
+
+  /* ─── SERVICE CARDS ─── */
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  .service-card {
+    background: white; border: 1px solid var(--border);
+    border-radius: 10px; padding: 32px 28px;
+    transition: all 0.25s; cursor: pointer;
+    box-shadow: var(--shadow);
+  }
+  .service-card:hover {
+    transform: translateY(-4px); box-shadow: var(--shadow-lg);
+    border-color: var(--brand-accent);
+  }
+  .service-icon { font-size: 2.4rem; margin-bottom: 16px; }
+  .service-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.35rem; font-weight: 700; color: var(--text-main);
+    margin-bottom: 10px;
+  }
+  .service-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 18px; }
+  .service-link {
+    font-size: 0.85rem; font-weight: 700; color: var(--brand-blue);
+    letter-spacing: 0.3px; display: flex; align-items: center; gap: 6px;
+    font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .service-link:hover { color: var(--brand-accent); }
+
+  /* ─── STEPS ─── */
+  .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .step-card { text-align: center; padding: 20px; }
+  .step-num {
+    width: 60px; height: 60px; border-radius: 50%;
+    background: var(--brand-accent); color: var(--brand-dark);
+    font-family: 'Barlow Condensed', sans-serif; font-size: 1.6rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+  }
+  .step-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; color: var(--text-main);
+  }
+  .step-desc { font-size: 0.9rem; color: var(--text-muted); }
+
+  /* ─── COVERAGE ─── */
+  .coverage-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin-top: 32px; }
+  .coverage-tag {
+    background: white; border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 10px 16px;
+    text-align: center; font-size: 0.9rem; font-weight: 500;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .coverage-tag:hover { border-color: var(--brand-accent); color: var(--brand-blue); }
+
+  /* ─── FAQ ─── */
+  .faq-list { max-width: 780px; }
+  .faq-item {
+    border-bottom: 1px solid var(--border); padding: 0;
+  }
+  .faq-q {
+    width: 100%; text-align: left; padding: 20px 0;
+    background: none; border: none; cursor: pointer;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem; font-weight: 600; color: var(--text-main);
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 16px;
+  }
+  .faq-q .arrow {
+    font-size: 1.2rem; color: var(--brand-accent);
+    transition: transform 0.25s; flex-shrink: 0;
+  }
+  .faq-item.open .arrow { transform: rotate(180deg); }
+  .faq-a {
+    display: none; padding-bottom: 20px;
+    font-size: 0.93rem; color: var(--text-muted); line-height: 1.7;
+  }
+  .faq-item.open .faq-a { display: block; }
+
+  /* ─── CTA STRIP ─── */
+  .cta-strip {
+    background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-dark) 100%);
+    padding: 60px 5vw; text-align: center;
+  }
+  .cta-strip h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800;
+    color: white; margin-bottom: 12px;
+  }
+  .cta-strip p { color: rgba(255,255,255,0.75); margin-bottom: 30px; font-size: 1rem; }
+  .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  /* ─── PAGE: SERVICE DETAIL ─── */
+  .service-hero {
+    background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-navy) 100%);
+    padding: 70px 5vw 60px;
+  }
+  .service-hero h1 {
+    font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 800;
+    color: white; margin-bottom: 16px;
+  }
+  .service-hero p { color: rgba(255,255,255,0.75); max-width: 660px; margin-bottom: 28px; font-size: 1rem; }
+  .breadcrumb {
+    font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 24px;
+  }
+  .breadcrumb span { color: var(--brand-accent); }
+
+  .service-block { margin-bottom: 40px; }
+  .service-block h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.35rem; font-weight: 700; color: var(--text-main);
+    margin-bottom: 12px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--brand-accent);
+  }
+  .service-block p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; }
+
+  .diff-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 16px; }
+  .diff-card {
+    background: var(--brand-light); border-radius: var(--radius);
+    padding: 24px; border-left: 4px solid var(--brand-accent);
+  }
+  .diff-card h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: var(--text-main);
+  }
+  .diff-card p { font-size: 0.88rem; color: var(--text-muted); }
+
+  /* ─── CONTACT ─── */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .contact-info h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem; font-weight: 700; margin-bottom: 24px;
+  }
+  .contact-item { display: flex; gap: 14px; margin-bottom: 20px; align-items: flex-start; }
+  .contact-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .contact-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-muted); }
+  .contact-val { font-size: 0.95rem; color: var(--text-main); font-weight: 500; }
+
+  .form-field { margin-bottom: 16px; }
+  .form-field label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--text-main); margin-bottom: 6px; }
+  .form-field input, .form-field textarea, .form-field select {
+    width: 100%; padding: 11px 14px; border: 1.5px solid var(--border);
+    border-radius: var(--radius); font-family: 'Barlow', sans-serif;
+    font-size: 0.93rem; color: var(--text-main); background: white;
+    transition: border-color 0.2s; outline: none;
+  }
+  .form-field input:focus, .form-field textarea:focus, .form-field select:focus {
+    border-color: var(--brand-blue);
+  }
+  .form-field textarea { height: 100px; resize: vertical; }
+
+  /* ─── COVERAGE TABLE ─── */
+  .coverage-table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+  .coverage-table th {
+    background: var(--brand-dark); color: white;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem;
+    padding: 12px 16px; text-align: left; letter-spacing: 0.5px;
+  }
+  .coverage-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+  .coverage-table tr:nth-child(even) td { background: var(--brand-light); }
+  .coverage-badge {
+    display: inline-block; background: rgba(29,185,84,0.12);
+    color: var(--brand-green); font-size: 0.78rem; font-weight: 600;
+    padding: 2px 10px; border-radius: 10px;
+  }
+
+  /* ─── VALUES ─── */
+  .values-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 16px; }
+  .value-card {
+    background: white; border-radius: 8px; padding: 28px;
+    box-shadow: var(--shadow); border-top: 3px solid var(--brand-accent);
+  }
+  .value-icon { font-size: 1.8rem; margin-bottom: 12px; }
+  .value-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+  .value-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #060e1c; color: rgba(255,255,255,0.65);
+    padding: 56px 5vw 32px;
+  }
+  .footer-grid {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px;
+    padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 28px;
+  }
+  .footer-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.3rem; font-weight: 800; color: white; margin-bottom: 12px;
+  }
+  .footer-logo span { color: var(--brand-accent); }
+  .footer-desc { font-size: 0.85rem; line-height: 1.65; margin-bottom: 20px; }
+  .footer-col h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.95rem; font-weight: 700; color: white;
+    margin-bottom: 16px; letter-spacing: 0.5px; text-transform: uppercase;
+  }
+  .footer-col a {
+    display: block; font-size: 0.85rem; color: rgba(255,255,255,0.6);
+    margin-bottom: 8px; transition: color 0.2s; cursor: pointer;
+  }
+  .footer-col a:hover { color: var(--brand-accent); }
+  .footer-bottom {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.8rem; flex-wrap: wrap; gap: 10px;
+  }
+  .footer-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(245,166,35,0.12); border: 1px solid rgba(245,166,35,0.25);
+    color: var(--brand-accent); font-size: 0.75rem; font-weight: 600;
+    padding: 4px 12px; border-radius: 12px;
+  }
+
+  /* ─── WHATSAPP FLOAT ─── */
+  .wa-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 999;
+    background: #25D366; color: white;
+    width: 58px; height: 58px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.7rem; box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+    cursor: pointer; transition: all 0.2s;
+    text-decoration: none;
+  }
+  .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.65); }
+
+  /* ─── TAG CHIP ─── */
+  .chip {
+    display: inline-block; background: rgba(26,58,110,0.08);
+    color: var(--brand-blue); font-size: 0.78rem; font-weight: 600;
+    padding: 3px 12px; border-radius: 12px; margin: 3px;
+  }
+
+  /* ─── DIVIDER ─── */
+  .divider { height: 3px; background: linear-gradient(to right, var(--brand-accent), transparent); max-width: 60px; margin: 12px 0 28px; border-radius: 3px; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .trust-grid { grid-template-columns: repeat(2,1fr); }
+    .services-grid { grid-template-columns: repeat(2,1fr); }
+    .steps-grid { grid-template-columns: 1fr; gap: 20px; }
+    .diff-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .values-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .trust-grid { grid-template-columns: 1fr 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--brand-dark); padding: 12px 0; }
+    .nav-links.open a { padding: 12px 24px; line-height: 1.4; }
+    .hamburger { display: flex; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .hero { min-height: auto; padding: 56px 5vw 48px; }
+    .hero h1 { font-size: 2.1rem; }
+    .coverage-grid { grid-template-columns: repeat(2,1fr); }
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-content { animation: fadeUp 0.7s ease forwards; }
+
+  /* Local landing */
+  .local-features { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-top: 20px; }
+  .local-feat {
+    background: white; border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 20px; display: flex; gap: 12px; align-items: flex-start;
+    cursor: pointer; transition: border-color 0.2s;
+  }
+  .local-feat:hover { border-color: var(--brand-accent); }
+  .local-feat-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .local-feat-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+  .local-feat-desc { font-size: 0.82rem; color: var(--text-muted); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">PROTECH<span>NEXUS</span></div>
+  <div class="nav-links" id="navLinks">
+    <a href="#" onclick="showPage('home')" class="active" id="nav-home">Inicio</a>
+    <a href="#" onclick="showPage('nosotros')" id="nav-nosotros">Nosotros</a>
+    <a href="#" onclick="showPage('cerrajeria')" id="nav-cerrajeria">Cerrajería</a>
+    <a href="#" onclick="showPage('plomeria')" id="nav-plomeria">Plomería</a>
+    <a href="#" onclick="showPage('electricidad')" id="nav-electricidad">Electricidad</a>
+    <a href="#" onclick="showPage('seguridad')" id="nav-seguridad">Seguridad</a>
+    <a href="#" onclick="showPage('cobertura')" id="nav-cobertura">Cobertura</a>
+    <a href="#" onclick="showPage('faq')" id="nav-faq">FAQ</a>
+    <a href="#" onclick="showPage('contacto')" id="nav-contacto">Contacto</a>
+  </div>
+  <a class="nav-cta" href="https://wa.me/57XXXXXXXXXX?text=Hola,%20necesito%20un%20servicio%20técnico%20en%20Bogotá.%20¿Están%20disponibles?" target="_blank">💬 WhatsApp</a>
+  <div class="hamburger" onclick="toggleMenu()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════ HOME ═══════════════════════════════ -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">🛡️ Técnicos en nómina · Garantía escrita · 24/7</div>
+      <h1>¿Emergencia en casa? Cerrajero, plomero y electricista a domicilio en Bogotá — <span>las 24 horas, con garantía</span></h1>
+      <p class="hero-sub">Somos Protech Nexus Group: una empresa real con técnicos propios, no una app de intermediarios. Atendemos en Bogotá y municipios de Cundinamarca los 365 días del año, incluidos domingos y festivos.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/57XXXXXXXXXX?text=Hola,%20necesito%20un%20servicio%20técnico%20en%20Bogotá.%20¿Están%20disponibles?" target="_blank" class="btn-primary">💬 Escríbanos por WhatsApp</a>
+        <a href="tel:+57XXXXXXXXXX" class="btn-secondary">📞 Llame Ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon">👷</div>
+        <div class="trust-title">Técnicos en nómina directa</div>
+        <div class="trust-desc">No subcontratamos. Cada técnico es empleado de Protech.</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">📄</div>
+        <div class="trust-title">Garantía por escrito</div>
+        <div class="trust-desc">Todos nuestros trabajos llevan respaldo documentado.</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🕐</div>
+        <div class="trust-title">Atención 24/7 real</div>
+        <div class="trust-desc">Domingos, festivos, madrugadas. Cuando nos necesite, estamos.</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🗺️</div>
+        <div class="trust-title">Bogotá + Cundinamarca</div>
+        <div class="trust-desc">Cubrimos toda la ciudad y municipios como Chía, Soacha y más.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICIOS -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">¿Qué necesita?</span>
+      <h2 class="section-title">Servicios especializados para su hogar y negocio</h2>
+      <div class="divider"></div>
+      <div class="services-grid">
+        <div class="service-card" onclick="showPage('cerrajeria')">
+          <div class="service-icon">🔑</div>
+          <div class="service-title">Cerrajería 24 horas</div>
+          <div class="service-desc">Apertura de cerraduras, cambio de guardas, instalación de cerraduras de alta seguridad y cerrajería automotriz.</div>
+          <div class="service-link">Ver servicio →</div>
+        </div>
+        <div class="service-card" onclick="showPage('plomeria')">
+          <div class="service-icon">🔧</div>
+          <div class="service-title">Plomería</div>
+          <div class="service-desc">Fugas, cañerías tapadas, instalación de sanitarios y griferías. Diagnóstico profesional con equipos especializados.</div>
+          <div class="service-link">Ver servicio →</div>
+        </div>
+        <div class="service-card" onclick="showPage('electricidad')">
+          <div class="service-icon">⚡</div>
+          <div class="service-title">Electricidad</div>
+          <div class="service-desc">Cortos, instalación de puntos eléctricos, cableado estructurado, tableros y más. Bajo normas RETIE.</div>
+          <div class="service-link">Ver servicio →</div>
+        </div>
+        <div class="service-card" onclick="showPage('seguridad')">
+          <div class="service-icon">📷</div>
+          <div class="service-title">Seguridad Electrónica</div>
+          <div class="service-desc">Cámaras de seguridad, alarmas, cerraduras digitales y control de acceso para hogar o negocio.</div>
+          <div class="service-link">Ver servicio →</div>
+        </div>
+        <div class="service-card" onclick="showPage('tanques')">
+          <div class="service-icon">💧</div>
+          <div class="service-title">Limpieza de Tanques</div>
+          <div class="service-desc">Lavado y desinfección de tanques de agua potable conforme a la normatividad colombiana vigente.</div>
+          <div class="service-link">Ver servicio →</div>
+        </div>
+        <div class="service-card" onclick="showPage('diseno')">
+          <div class="service-icon">🏠</div>
+          <div class="service-title">Diseño de Interiores</div>
+          <div class="service-desc">Remodelaciones, adecuaciones y diseño de espacios residenciales y comerciales de principio a fin.</div>
+          <div class="service-link">Ver servicio →</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+  <section class="section section-light">
+    <div class="container">
+      <span class="section-label">El proceso</span>
+      <h2 class="section-title">Así de simple es solicitar su servicio</h2>
+      <div class="divider"></div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <div class="step-title">Contáctenos</div>
+          <div class="step-desc">Llámenos, escríbanos por WhatsApp o use nuestro formulario. Cuéntenos qué necesita y dónde está.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <div class="step-title">Cotización sin costo</div>
+          <div class="step-desc">Le damos un presupuesto claro, sin letras pequeñas ni sorpresas. Usted decide si avanza.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <div class="step-title">Técnico en su domicilio</div>
+          <div class="step-desc">Un técnico de Protech llega a su puerta con herramientas, materiales y la experiencia para resolver. Al terminar, recibe su garantía por escrito.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COBERTURA PREVIEW -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Cobertura</span>
+      <h2 class="section-title">Bogotá y municipios de Cundinamarca</h2>
+      <div class="divider"></div>
+      <p class="section-desc">Atendemos en toda Bogotá y en los siguientes municipios. Si su municipio no aparece, contáctenos: es posible que podamos atenderle.</p>
+      <div class="coverage-grid">
+        <div class="coverage-tag" onclick="showPage('chia')">📍 Chía</div>
+        <div class="coverage-tag" onclick="showPage('soacha')">📍 Soacha</div>
+        <div class="coverage-tag">📍 Zipaquirá</div>
+        <div class="coverage-tag">📍 Cajicá</div>
+        <div class="coverage-tag">📍 Mosquera</div>
+        <div class="coverage-tag">📍 Funza</div>
+        <div class="coverage-tag">📍 Madrid</div>
+        <div class="coverage-tag">📍 Cota</div>
+        <div class="coverage-tag">📍 Sopó</div>
+        <div class="coverage-tag">📍 Tocancipá</div>
+        <div class="coverage-tag">📍 Tabio</div>
+        <div class="coverage-tag">📍 La Calera</div>
+        <div class="coverage-tag" onclick="showPage('cobertura')">+ Ver cobertura completa →</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ HOME -->
+  <section class="section section-light">
+    <div class="container">
+      <span class="section-label">Preguntas frecuentes</span>
+      <h2 class="section-title">Lo que nos preguntan con más frecuencia</h2>
+      <div class="divider"></div>
+      <div class="faq-list" id="faq-home">
+        <div class="faq-item">
+          <button class="faq-q">¿Atienden emergencias de noche y en días festivos?<span class="arrow">▼</span></button>
+          <div class="faq-a">Sí. Nuestro servicio funciona las 24 horas del día, los 7 días de la semana, incluyendo domingos, festivos y madrugadas. Cuando llame, un técnico real le responde.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Cobran la visita o el diagnóstico?<span class="arrow">▼</span></button>
+          <div class="faq-a">El valor del diagnóstico o visita técnica depende del tipo de servicio. Le informamos el costo antes de agendar para que no haya sorpresas. En muchos casos, si contrata el servicio el mismo día, el valor de la visita se descuenta del total.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Sus técnicos son propios o subcontratados?<span class="arrow">▼</span></button>
+          <div class="faq-a">Todos nuestros técnicos están contratados directamente por Protech Nexus Group. No somos una plataforma que conecta freelancers: somos una empresa con equipo propio, lo cual nos permite garantizar la calidad y responder por cada trabajo.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Ofrecen garantía por los trabajos realizados?<span class="arrow">▼</span></button>
+          <div class="faq-a">Sí. Cada servicio incluye una garantía por escrito que cubre el trabajo realizado. Los términos específicos dependen del tipo de servicio y se detallan antes de iniciar.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Cómo puedo solicitar un servicio?<span class="arrow">▼</span></button>
+          <div class="faq-a">Puede llamarnos directamente, escribirnos por WhatsApp o llenar el formulario de contacto en nuestra página. Le respondemos en minutos y coordinamos la visita.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA CIERRE -->
+  <div class="cta-strip">
+    <h2>¿Necesita un técnico ahora mismo?</h2>
+    <p>No importa la hora ni el día. Llámenos o escríbanos y en minutos coordinamos su servicio con garantía.</p>
+    <div class="cta-btns">
+      <a href="tel:+57XXXXXXXXXX" class="btn-secondary">📞 Llamar ahora</a>
+      <a href="https://wa.me/57XXXXXXXXXX?text=Hola,%20necesito%20un%20servicio%20técnico.%20¿Están%20disponibles?" target="_blank" class="btn-primary">💬 WhatsApp</a>
+    </div>
+  </div>
+
+</div><!-- /home -->
+
+<!-- ═══════════════════════════════ NOSOTROS ═══════════════════════════════ -->
+<div class="page" id="page-nosotros">
+  <section class="service-hero">
+    <div class="container">
+      <div class="breadcrumb"><span onclick="showPage('home')" style="cursor:pointer">Inicio</span> › Sobre Nosotros</div>
+      <h1>No somos una app. Somos el equipo que llega a su puerta.</h1>
+      <p>Protech Nexus Group nació con una convicción: cuando usted tiene una emergencia en casa, merece hablar con una empresa real.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Nuestra historia</span>
+      <h2 class="section-title">¿Por qué existe Protech?</h2>
+      <div class="divider"></div>
+      <p style="color:var(--text-muted);line-height:1.8;max-width:760px;margin-bottom:24px;">Sabemos lo que se siente llamar a un número y que nadie conteste. O que llegue alguien sin herramientas, sin identificación, y que después de cobrar desaparezca sin dejar garantía. Protech Nexus Group existe para ofrecer algo diferente.</p>
+      <p style="color:var(--text-muted);line-height:1.8;max-width:760px;margin-bottom:24px;">Somos una empresa colombiana legalmente constituida, con sede en Bogotá y operación en municipios de Cundinamarca. Nuestro equipo técnico trabaja directamente con nosotros — no son freelancers, no son subcontratados. Son profesionales que conocemos, capacitamos y respaldamos.</p>
+      <p style="color:var(--text-muted);line-height:1.8;max-width:760px;margin-bottom:48px;">Cada servicio que realizamos lleva una garantía por escrito porque creemos que la confianza no se pide: se demuestra.</p>
+
+      <span class="section-label">Lo que nos diferencia</span>
+      <h2 class="section-title">Lo que usted no va a encontrar en otros</h2>
+      <div class="divider"></div>
+      <div class="diff-grid">
+        <div class="diff-card">
+          <h4>👷 Técnicos en nómina, no freelancers</h4>
+          <p>Nuestros técnicos son empleados directos de Protech. Cada persona que llega a su domicilio ha sido seleccionada, capacitada y respaldada por la empresa. Usted no está abriendo su puerta a un desconocido.</p>
+        </div>
+        <div class="diff-card">
+          <h4>📄 Garantía por escrito en cada servicio</h4>
+          <p>No le pedimos que confíe de palabra. Al finalizar cada trabajo, le entregamos un documento de garantía que detalla lo que se hizo, los materiales utilizados y el período de cobertura.</p>
+        </div>
+        <div class="diff-card">
+          <h4>🕐 Atención real las 24 horas</h4>
+          <p>Cuando decimos 24/7, lo decimos en serio. Nuestro servicio funciona todos los días del año, incluyendo domingos, festivos y madrugadas. Las emergencias no esperan al lunes a las 8.</p>
+        </div>
+        <div class="diff-card">
+          <h4>🗺️ Cobertura amplia, servicio local</h4>
+          <p>Operamos en toda Bogotá y en municipios de Cundinamarca como Chía, Soacha, Zipaquirá, Cajicá, Mosquera y Funza. Coordinamos un técnico para su ubicación.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <span class="section-label">Cómo trabajamos</span>
+      <h2 class="section-title">Nuestros valores</h2>
+      <div class="divider"></div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">🔍</div>
+          <div class="value-title">Transparencia</div>
+          <div class="value-desc">Le decimos cuánto cuesta antes de empezar. Sin sorpresas, sin cobros ocultos, sin "eso no estaba incluido".</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">✅</div>
+          <div class="value-title">Responsabilidad</div>
+          <div class="value-desc">Si lo hacemos, respondemos por ello. La garantía escrita no es un gesto simbólico: es un compromiso.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">⏱️</div>
+          <div class="value-title">Respeto por su tiempo</div>
+          <div class="value-desc">Coordinamos hora de llegada y la cumplimos. Si hay un imprevisto, le avisamos antes.</div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🏆</div>
+          <div class="value-title">Calidad técnica</div>
+          <div class="value-desc">Usamos materiales de buenas marcas y trabajamos con las normas técnicas colombianas. Un servicio mal hecho sale más caro.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Preguntas sobre la empresa</h2>
+      <div class="divider"></div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">¿Protech Nexus Group es una empresa legalmente constituida?<span class="arrow">▼</span></button>
+          <div class="faq-a">Sí. Somos una Sociedad por Acciones Simplificada (S.A.S.) registrada ante Cámara de Comercio de Bogotá y la DIAN, con todos los requisitos legales al día.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Puedo verificar la identidad del técnico que llega a mi domicilio?<span class="arrow">▼</span></button>
+          <div class="faq-a">Sí. Todos nuestros técnicos portan identificación de la empresa. Además, al confirmar su servicio le indicamos el nombre del técnico asignado para su tranquilidad.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-strip">
+    <h2>¿Necesita un servicio técnico de confianza?</h2>
+    <p>Solicite su servicio ahora y compruebe nuestra forma de trabajar.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/57XXXXXXXXXX" target="_blank" class="btn-primary">💬 WhatsApp</a>
+      <a href="tel:+57XXXXXXXXXX" class="btn-secondary">📞 Llamar</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ CERRAJERÍA ═══════════════════════════════ -->
+<div class="page" id="page-cerrajeria">
+  <section class="service-hero">
+    <div class="container">
+      <div class="breadcrumb"><span onclick="showPage('home')" style="cursor:pointer">Inicio</span> › Cerrajería en Bogotá</div>
+      <h1>Cerrajero a Domicilio en Bogotá — Servicio 24 Horas con Garantía</h1>
+      <p>Si está leyendo esto porque se quedó por fuera de su casa o necesita cambiar una cerradura, estamos disponibles ahora mismo. Nuestros cerrajeros son técnicos en nómina, llegan con herramientas y materiales, y cada trabajo incluye garantía escrita.</p>
+      <div class="hero-btns">
+        <a href="tel:+57XXXXXXXXXX" class="btn-primary">📞 Llamar ahora</a>
+        <a href="https://wa.me/57XXXXXXXXXX?text=Hola,%20necesito%20un%20cerrajero%20en%20Bogotá.%20¿Están%20disponibles?" target="_blank" class="btn-secondary">💬 WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">¿Por qué elegirnos?</span>
+      <h2 class="section-title">No cualquiera entra a su casa</h2>
+      <div class="divider"></div>
+      <p style="color:var(--text-muted);line-height:1.8;max-width:760px;margin-bottom:20px;">En cerrajería, la confianza no es un detalle menor. Usted está literalmente abriendo la puerta de su casa a un desconocido. Con Protech, cada cerrajero que llega a su domicilio es un empleado directo nuestro, identificado y respaldado por la empresa.</p>
+      <p style="color:var(--text-muted);line-height:1.8;max-width:760px;margin-bottom:48px;">Atendemos emergencias las 24 horas del día, los 7 días de la semana, incluyendo domingos, festivos y madrugadas. Porque las llaves no se pierden solo en horario de oficina.</p>
+
+      <span class="section-label">Servicios</span>
+      <h2 class="section-title">Nuestros servicios de cerrajería en Bogotá</h2>
+      <div class="divider"></div>
+
+      <div class="service-block">
+        <h3>🚪 Apertura de puertas y cerraduras</h3>
+        <p>¿Se le cerraron las llaves adentro? ¿Perdió las llaves y no puede entrar? Abrimos puertas residenciales, de oficina y locales comerciales sin dañar la cerradura siempre que sea técnicamente posible. Si la cerradura está dañada o es necesario forzarla, le informamos antes de proceder y le ofrecemos opciones de reemplazo en el mismo momento.</p>
+      </div>
+      <div class="service-block">
+        <h3>🔒 Cambio de guardas y cilindros</h3>
+        <p>Si su cerradura tiene desgaste, si le robaron las llaves o simplemente quiere mayor seguridad, realizamos el cambio de guardas en el acto. Trabajamos con todas las marcas disponibles en el mercado colombiano: Yale, Schlage, Mul-T-Lock, entre otras. El cambio incluye prueba de funcionamiento completa y entrega de todas las copias de la nueva llave.</p>
+      </div>
+      <div class="service-block">
+        <h3>🛡️ Instalación de cerraduras de alta seguridad</h3>
+        <p>Instalamos cerraduras de seguridad con cilindro antibumping, cerraduras multipunto, cerraduras digitales con código o huella, y sistemas de cerrojo reforzado. Le asesoramos sobre cuál opción se adapta mejor a su puerta y a su nivel de seguridad requerido, con un presupuesto claro antes de iniciar.</p>
+      </div>
+      <div class="service-block">
+        <h3>🚗 Cerrajería automotriz</h3>
+        <p>¿Se le quedaron las llaves dentro del carro? ¿Necesita una copia de llave con chip? Nuestros técnicos abren vehículos de todas las marcas sin dañar la cerradura ni la pintura. También realizamos programación de llaves con chip y copia de mandos.</p>
+      </div>
+      <div class="service-block">
+        <h3>🏢 Cerrajería para empresas y locales comerciales</h3>
+        <p>Instalación y mantenimiento de cerraduras de alta seguridad, sistemas de acceso con tarjeta o código, brazos hidráulicos y bisagras de piso para puertas de vidrio. Trabajamos con administraciones de edificios, locales comerciales y oficinas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <h2 class="section-title">¿Cómo funciona nuestro servicio?</h2>
+      <div class="divider"></div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <div class="step-title">Contáctenos</div>
+          <div class="step-desc">Llame o escriba por WhatsApp. Cuéntenos qué sucedió. Le daremos un estimado de tiempo y costo.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <div class="step-title">Diagnóstico en sitio</div>
+          <div class="step-desc">El cerrajero llega, evalúa la situación y le confirma el presupuesto exacto antes de tocar nada. Usted decide si procede.</div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <div class="step-title">Ejecución con garantía</div>
+          <div class="step-desc">El técnico realiza el trabajo con las herramientas y materiales adecuados. Al terminar, le entrega la garantía por escrito.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Preguntas frecuentes — Cerrajería</h2>
+      <div class="divider"></div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">¿Cuánto cuesta un cerrajero a domicilio en Bogotá?<span class="arrow">▼</span></button>
+          <div class="faq-a">El costo depende del tipo de servicio. Una apertura de puerta sencilla tiene un rango diferente a la instalación de una cerradura de alta seguridad. Le damos el precio antes de iniciar para que no haya sorpresas. Puede llamarnos o escribir por WhatsApp para cotizar su caso específico sin compromiso.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Cuánto demora en llegar el cerrajero?<span class="arrow">▼</span></button>
+          <div class="faq-a">El tiempo de llegada depende de su ubicación y de la disponibilidad en ese momento. Le informamos el tiempo estimado al confirmar el servicio. Nuestro objetivo siempre es llegar en el menor tiempo posible, especialmente en emergencias.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Pueden abrir mi puerta sin dañar la cerradura?<span class="arrow">▼</span></button>
+          <div class="faq-a">En la mayoría de los casos, sí. Nuestros técnicos están capacitados en técnicas de apertura no destructiva. Si por alguna razón es necesario forzar, se lo informamos antes y le ofrecemos opciones de reemplazo inmediato.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Trabajan con cerraduras de todas las marcas?<span class="arrow">▼</span></button>
+          <div class="faq-a">Sí. Trabajamos con Yale, Schlage, Mul-T-Lock, Tesa, y las principales marcas disponibles en Colombia. Si necesita una marca específica, consúltenos y la conseguimos.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Atienden cerrajería automotriz?<span class="arrow">▼</span></button>
+          <div class="faq-a">Sí. Abrimos vehículos de todas las marcas y realizamos copia de llaves con chip. Contáctenos con la marca y modelo de su vehículo para darle información específica.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-strip">
+    <h2>¿Necesita un cerrajero ahora?</h2>
+    <p>No espere más. Llámenos o escríbanos y en minutos coordinamos la visita de un cerrajero profesional.</p>
+    <div class="cta-btns">
+      <a href="tel:+57XXXXXXXXXX" class="btn-secondary">📞 Llamar ahora</a>
+      <a href="https://wa.me/57XXXXXXXXXX?text=Hola,%20necesito%20un%20cerrajero" target="_blank" class="btn-primary">💬 Solicitar cerrajero</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ PLOMERÍA ═══════════════════════════════ -->
+<div class="page" id="page-plomeria">
+  <section class="service-hero">
+    <div class="container">
+      <div class="breadcrumb"><span onclick="showPage('home')" style="cursor:pointer">Inicio</span> › Plomería en Bogotá</div>
+      <h1>Plomero a Domicilio en Bogotá — Diagnóstico Profesional y Solución de Raíz</h1>
+      <p>Una fuga de agua no espera. Una cañería tapada tampoco. Nuestros plomeros llegan a su domicilio con equipos especializados para diagnosticar el problema y resolverlo el mismo día, sin parches temporales que terminen saliendo más caros.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/57XXXXXXXXXX?text=Hola,%20necesito%20un%20plomero%20en%20Bogotá" target="_blank" class="btn-primary">💬 Cotizar plomería</a>
+        <a href="tel:+57XXXXXXXXXX" class="btn-secondary">📞 Llamar</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Servicios</span>
+      <h2 class="section-title">Nuestros servicios de plomería</h2>
+      <div class="divider"></div>
+      <div class="service-block">
+        <h3>🚿 Destape de cañerías y desagües</h3>
+        <p>Destapamos cañerías, sifones, desagües de lavaplatos, duchas, patios y bajantes. Usamos sonda eléctrica y equipos de presión para limpiezas profundas que eliminan la obstrucción sin romper pisos ni paredes.</p>
+      </div>
+      <div class="service-block">
+        <h3>💧 Detección y reparación de fugas</h3>
+        <p>Si su factura de agua subió sin explicación o detecta humedad en paredes o pisos, nuestros plomeros localizan la fuga con técnicas no invasivas. Reparamos tuberías de agua potable y residual con materiales de calidad y garantía escrita.</p>
+      </div>
+      <div class="service-block">
+        <h3>🔧 Instalación de griferías y sanitarios</h3>
+        <p>Instalamos y reemplazamos grifos, llaves de agua, sanitarios, lavamanos, duchas, calentadores de paso y tanques de almacenamiento. Trabajamos con las marcas que usted elija.</p>
+      </div>
+      <div class="service-block">
+        <h3>🏗️ Redes hidráulicas y acometidas</h3>
+        <p>Diseño, instalación y reparación de redes de agua potable y aguas residuales para proyectos residenciales y comerciales. Trabajamos conforme a la Resolución 0330 de 2017 del Ministerio de Vivienda.</p>
+      </div>
+      <div class="service-block">
+        <h3>🛡️ Mantenimiento preventivo</h3>
+        <p>Revisiones periódicas de su instalación hidráulica para detectar problemas antes de que se conviertan en emergencias. Ideal para conjuntos residenciales, edificios y locales comerciales.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <h2 class="section-title">Preguntas frecuentes — Plomería</h2>
+      <div class="divider"></div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">¿Cómo sé si tengo una fuga de agua oculta?<span class="arrow">▼</span></button>
+          <div class="faq-a">Las señales más comunes son: aumento inexplicable en la factura del agua, manchas de humedad en paredes o pisos, sonido de agua corriendo cuando todos los grifos están cerrados, y moho en zonas que deberían estar secas. Si detecta alguna, llámenos para un diagnóstico.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Pueden destapar una cañería sin romper el piso?<span class="arrow">▼</span></button>
+          <div class="faq-a">En la mayoría de los casos, sí. Usamos sonda eléctrica y equipos de presión que limpian las obstrucciones por dentro de la tubería. Solo en casos de daño estructural en la tubería es necesario intervenir el piso, y siempre se lo informamos antes.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Atienden emergencias de plomería de noche?<span class="arrow">▼</span></button>
+          <div class="faq-a">Sí. Nuestro servicio funciona 24/7. Si tiene una inundación, una fuga activa o un problema que no puede esperar, contáctenos sin importar la hora.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Los materiales están incluidos en el precio?<span class="arrow">▼</span></button>
+          <div class="faq-a">El presupuesto que le damos incluye mano de obra. Los materiales se cotizan por separado y le informamos el costo antes de adquirirlos. Si prefiere comprar los materiales usted mismo, también trabajamos con lo que usted provea.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-strip">
+    <h2>¿Tiene un problema de plomería?</h2>
+    <p>Cuéntenos qué sucede y le damos una cotización clara en minutos.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/57XXXXXXXXXX?text=Hola,%20necesito%20un%20plomero" target="_blank" class="btn-primary">💬 Cotizar por WhatsApp</a>
+      <a href="tel:+57XXXXXXXXXX" class="btn-secondary">📞 Llamar ahora</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ ELECTRICIDAD ═══════════════════════════════ -->
+<div class="page" id="page-electricidad">
+  <section class="service-hero">
+    <div class="container">
+      <div class="breadcrumb"><span onclick="showPage('home')" style="cursor:pointer">Inicio</span> › Electricidad en Bogotá</div>
+      <h1>Electricista a Domicilio en Bogotá — Instalaciones y Reparaciones con Norma RETIE</h1>
+      <p>La electricidad no es algo para improvisar. Nuestros electricistas trabajan bajo las normas del Reglamento Técnico de Instalaciones Eléctricas (RETIE) y cada trabajo incluye garantía escrita. Estamos disponibles las 24 horas.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/57XXXXXXXXXX?text=Hola,%20necesito%20un%20electricista" target="_blank" class="btn-primary">💬 Solicitar electricista</a>
+        <a href="tel:+57XXXXXXXXXX" class="btn-secondary">📞 Llamar</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Servicios</span>
+      <h2 class="section-title">Nuestros servicios de electricidad</h2>
+      <div class="divider"></div>
+      <div class="service-block">
+        <h3>⚡ Diagnóstico y reparación de cortos circuitos</h3>
+        <p>Identificamos la causa exacta del corto y la reparamos. Ya sea un cable suelto, una sobrecarga en el circuito o un electrodoméstico defectuoso, localizamos el origen y lo solucionamos para que no vuelva a ocurrir.</p>
+      </div>
+      <div class="service-block">
+        <h3>🔌 Instalación de puntos eléctricos</h3>
+        <p>Tomas de corriente, interruptores, puntos para iluminación, puntos regulados para equipos sensibles. Cada instalación se realiza con materiales certificados y conforme a la norma RETIE.</p>
+      </div>
+      <div class="service-block">
+        <h3>🔶 Cableado eléctrico y redes</h3>
+        <p>Instalación de cableado eléctrico nuevo para remodelaciones, ampliaciones o proyectos desde cero. Cableado estructurado para datos y telecomunicaciones. Organizamos y mejoramos instalaciones existentes que estén improvisadas o en mal estado.</p>
+      </div>
+      <div class="service-block">
+        <h3>🗂️ Tableros eléctricos y breakers</h3>
+        <p>Instalación, reemplazo y mantenimiento de tableros de distribución, breakers y tacos. Si su tablero es antiguo o no soporta la carga eléctrica actual de su hogar, le asesoramos sobre la actualización necesaria.</p>
+      </div>
+      <div class="service-block">
+        <h3>💡 Iluminación residencial y comercial</h3>
+        <p>Diseño e instalación de sistemas de iluminación interior y exterior. LED, lámparas decorativas, reflectores, sensores de movimiento. Optimizamos su consumo eléctrico sin sacrificar la funcionalidad.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <h2 class="section-title">Preguntas frecuentes — Electricidad</h2>
+      <div class="divider"></div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">¿Por qué se bajan los tacos de la luz frecuentemente?<span class="arrow">▼</span></button>
+          <div class="faq-a">Puede ser por sobrecarga (demasiados aparatos en un solo circuito), por un cortocircuito, por un electrodoméstico defectuoso o por cables en mal estado. Un diagnóstico eléctrico profesional identifica la causa exacta.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Trabajan con norma RETIE?<span class="arrow">▼</span></button>
+          <div class="faq-a">Sí. Todas nuestras instalaciones y reparaciones se realizan conforme al Reglamento Técnico de Instalaciones Eléctricas (RETIE), que es la norma que rige en Colombia para garantizar seguridad eléctrica.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Atienden emergencias eléctricas de noche?<span class="arrow">▼</span></button>
+          <div class="faq-a">Sí. Nuestro servicio de electricidad opera 24 horas para emergencias como cortos, apagones parciales o problemas que representen riesgo. Contáctenos sin importar la hora.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Pueden hacer la instalación eléctrica de una remodelación completa?<span class="arrow">▼</span></button>
+          <div class="faq-a">Sí. Hacemos instalaciones eléctricas completas para remodelaciones, ampliaciones y proyectos nuevos, desde el diseño del plano eléctrico hasta la instalación y pruebas.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-strip">
+    <h2>¿Necesita un electricista?</h2>
+    <p>Trabajo bajo norma RETIE, con garantía escrita y técnicos en nómina.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/57XXXXXXXXXX?text=Hola,%20necesito%20un%20electricista" target="_blank" class="btn-primary">💬 Solicitar por WhatsApp</a>
+      <a href="tel:+57XXXXXXXXXX" class="btn-secondary">📞 Llamar ahora</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ SEGURIDAD ═══════════════════════════════ -->
+<div class="page" id="page-seguridad">
+  <section class="service-hero">
+    <div class="container">
+      <div class="breadcrumb"><span onclick="showPage('home')" style="cursor:pointer">Inicio</span> › Seguridad Electrónica</div>
+      <h1>Seguridad Electrónica para su Hogar y Negocio en Bogotá</h1>
+      <p>Cámaras de seguridad, alarmas, cerraduras inteligentes y control de acceso. Diseñamos e instalamos el sistema que se adapta a su espacio y presupuesto, con equipos de marcas confiables y soporte técnico directo.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/57XXXXXXXXXX?text=Hola,%20necesito%20cotización%20de%20seguridad%20electrónica" target="_blank" class="btn-primary">💬 Solicitar cotización</a>
+        <a href="tel:+57XXXXXXXXXX" class="btn-secondary">📞 Llamar</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Soluciones</span>
+      <h2 class="section-title">Soluciones de seguridad electrónica</h2>
+      <div class="divider"></div>
+      <div class="service-block">
+        <h3>📷 Cámaras de seguridad (CCTV)</h3>
+        <p>Instalamos sistemas de circuito cerrado de televisión para casas, apartamentos, oficinas, locales y bodegas. Cámaras con visión nocturna, detección de movimiento y acceso remoto desde su celular las 24 horas. Le asesoramos sobre la cantidad y ubicación ideal según el plano de su espacio.</p>
+      </div>
+      <div class="service-block">
+        <h3>🚨 Alarmas residenciales y comerciales</h3>
+        <p>Sistemas de alarma con sensores de movimiento, apertura de puertas y ventanas, sirena disuasiva y notificación directa a su teléfono. Funcionan incluso si se va la luz gracias a batería de respaldo.</p>
+      </div>
+      <div class="service-block">
+        <h3>🔐 Cerraduras digitales e inteligentes</h3>
+        <p>Cerraduras con acceso por código, huella dactilar, tarjeta o aplicación móvil. Ideales para Airbnb, oficinas, conjuntos y hogares que quieren eliminar el riesgo de perder llaves. Instalación profesional con garantía.</p>
+      </div>
+      <div class="service-block">
+        <h3>🏢 Control de acceso</h3>
+        <p>Sistemas de control de acceso para edificios, conjuntos residenciales, oficinas y bodegas. Tarjetas de proximidad, lectores biométricos, intercomunicadores con video. Gestionamos la instalación completa y la configuración inicial.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <h2 class="section-title">Preguntas frecuentes — Seguridad</h2>
+      <div class="divider"></div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">¿Puedo ver las cámaras desde mi celular?<span class="arrow">▼</span></button>
+          <div class="faq-a">Sí. Todos los sistemas que instalamos permiten acceso remoto desde su smartphone, las 24 horas, desde cualquier lugar con conexión a internet.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Las alarmas funcionan si se va la luz?<span class="arrow">▼</span></button>
+          <div class="faq-a">Sí. Los sistemas de alarma que instalamos incluyen batería de respaldo que mantiene el sistema activo durante varias horas en caso de corte eléctrico.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿También instalan cerraduras digitales para Airbnb?<span class="arrow">▼</span></button>
+          <div class="faq-a">Sí. Las cerraduras con código son ideales para alojamientos temporales porque permiten generar códigos únicos para cada huésped sin necesidad de entregar llaves físicas.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-strip">
+    <h2>Proteja su hogar o negocio</h2>
+    <p>Le hacemos una visita técnica y le entregamos cotización detallada sin compromiso.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/57XXXXXXXXXX?text=Hola,%20quiero%20cotización%20de%20seguridad%20electrónica" target="_blank" class="btn-primary">💬 Cotizar seguridad</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ TANQUES ═══════════════════════════════ -->
+<div class="page" id="page-tanques">
+  <section class="service-hero">
+    <div class="container">
+      <div class="breadcrumb"><span onclick="showPage('home')" style="cursor:pointer">Inicio</span> › Limpieza de Tanques</div>
+      <h1>Limpieza y Desinfección de Tanques de Agua en Bogotá — Profesional y con Normativa</h1>
+      <p>El agua que usted toma, cocina y usa para bañarse pasa por su tanque. Si ese tanque tiene sedimentos, bacterias o algas, la calidad del agua se compromete. Nuestro servicio garantiza que su tanque quede limpio, seguro y conforme a la normatividad colombiana.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/57XXXXXXXXXX?text=Hola,%20necesito%20programar%20limpieza%20de%20tanque" target="_blank" class="btn-primary">💬 Programar limpieza</a>
+        <a href="tel:+57XXXXXXXXXX" class="btn-secondary">📞 Llamar</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">El servicio</span>
+      <h2 class="section-title">¿Qué incluye nuestro servicio de limpieza?</h2>
+      <div class="divider"></div>
+      <div class="diff-grid" style="margin-top:0">
+        <div class="diff-card">
+          <h4>💧 Vaciado y limpieza mecánica</h4>
+          <p>Drenamos el tanque y eliminamos manualmente sedimentos, lodo, óxido y residuos acumulados en el fondo y las paredes.</p>
+        </div>
+        <div class="diff-card">
+          <h4>🧪 Desinfección con productos certificados</h4>
+          <p>Aplicamos desinfectantes aprobados para uso en agua potable que eliminan bacterias, hongos y microorganismos sin dejar residuos tóxicos.</p>
+        </div>
+        <div class="diff-card">
+          <h4>🔍 Inspección del estado del tanque</h4>
+          <p>Revisamos la estructura, las tapas, las conexiones y el sistema de llenado. Si detectamos fisuras, corrosión o problemas de sellado, se lo informamos.</p>
+        </div>
+        <div class="diff-card">
+          <h4>📋 Certificado de limpieza</h4>
+          <p>Al finalizar, le entregamos un certificado que documenta el servicio realizado, la fecha y los productos utilizados. Útil para requisitos de administraciones de conjuntos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <h2 class="section-title">Normatividad</h2>
+      <div class="divider"></div>
+      <p style="color:var(--text-muted);line-height:1.8;max-width:760px;margin-bottom:20px;">Según la normatividad colombiana (Decreto 1575 de 2007 y Resolución 2115 de 2007), los tanques de almacenamiento de agua potable deben limpiarse y desinfectarse <strong>al menos dos veces al año</strong>. En conjuntos residenciales, esta obligación recae sobre la administración y su incumplimiento puede generar sanciones.</p>
+      <p style="color:var(--text-muted);line-height:1.8;max-width:760px;">Más allá de la norma, la recomendación práctica es hacerlo cada 6 meses o antes si nota cambios en el color, olor o sabor del agua.</p>
+
+      <div style="margin-top:40px">
+        <h2 class="section-title">Preguntas frecuentes</h2>
+        <div class="divider"></div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q">¿El servicio incluye tanques elevados y subterráneos?<span class="arrow">▼</span></button>
+            <div class="faq-a">Sí. Limpiamos tanques elevados (aéreos), tanques subterráneos y tanques de reserva. El proceso se adapta al tipo de tanque y a las condiciones de acceso.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">¿Es necesario cortar el agua durante la limpieza?<span class="arrow">▼</span></button>
+            <div class="faq-a">Sí, durante el servicio el suministro de agua se interrumpe temporalmente. Coordinamos con usted el horario más conveniente para minimizar la molestia.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">¿Entregan certificado de limpieza?<span class="arrow">▼</span></button>
+            <div class="faq-a">Sí. Al finalizar le entregamos un certificado escrito que documenta la limpieza, los productos utilizados y la fecha. Especialmente útil para conjuntos residenciales.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-strip">
+    <h2>Programe la limpieza de su tanque</h2>
+    <p>Con certificado incluido y conforme a la normatividad colombiana.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/57XXXXXXXXXX?text=Hola,%20quiero%20programar%20limpieza%20de%20tanque%20de%20agua" target="_blank" class="btn-primary">💬 Programar ahora</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ DISEÑO ═══════════════════════════════ -->
+<div class="page" id="page-diseno">
+  <section class="service-hero">
+    <div class="container">
+      <div class="breadcrumb"><span onclick="showPage('home')" style="cursor:pointer">Inicio</span> › Diseño de Interiores</div>
+      <h1>Diseño de Interiores y Remodelaciones en Bogotá — De la Idea al Espacio Terminado</h1>
+      <p>¿Quiere transformar su cocina, remodelar un baño o adecuar un local comercial? En Protech no solo diseñamos: ejecutamos. Nuestro equipo se encarga de la plomería, la electricidad, los acabados y la coordinación completa del proyecto.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/57XXXXXXXXXX?text=Hola,%20quiero%20cotización%20de%20remodelación" target="_blank" class="btn-primary">💬 Solicitar cotización</a>
+        <a href="tel:+57XXXXXXXXXX" class="btn-secondary">📞 Llamar</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Proyectos</span>
+      <h2 class="section-title">¿Qué proyectos realizamos?</h2>
+      <div class="divider"></div>
+      <div class="service-block">
+        <h3>🍳 Remodelación de cocinas</h3>
+        <p>Rediseño funcional y estético de cocinas. Incluye plomería, puntos eléctricos, mesones, gabinetes, enchape e iluminación. Le ayudamos desde el concepto hasta la entrega, con un cronograma claro y presupuesto cerrado.</p>
+      </div>
+      <div class="service-block">
+        <h3>🚿 Remodelación de baños</h3>
+        <p>Desde el cambio de griferías y sanitarios hasta la remodelación integral con enchape, iluminación y puntos hidráulicos nuevos. Trabajamos en espacios pequeños y grandes, siempre buscando funcionalidad y estética.</p>
+      </div>
+      <div class="service-block">
+        <h3>🏠 Adecuación de apartamentos y casas</h3>
+        <p>Pisos, pintura, cielos rasos, closets, divisiones en drywall, y todo lo necesario para transformar un espacio. Coordinamos todos los oficios (plomería, electricidad, albañilería, carpintería) para que usted tenga un solo punto de contacto.</p>
+      </div>
+      <div class="service-block">
+        <h3>🏪 Adecuación de locales y oficinas</h3>
+        <p>Diseño y ejecución de espacios comerciales. Desde la distribución funcional hasta la instalación eléctrica, iluminación, señalización y acabados. Trabajamos con plazos definidos porque entendemos que el tiempo es dinero.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <h2 class="section-title">¿Por qué Protech para su remodelación?</h2>
+      <div class="divider"></div>
+      <p style="color:var(--text-muted);line-height:1.8;max-width:760px;margin-bottom:24px;">Porque no es solo diseño. Nuestro equipo incluye plomeros, electricistas y técnicos que ejecutan el proyecto. Usted no necesita coordinar a cinco proveedores diferentes, lidiar con tiempos cruzados ni perseguir a nadie. Nosotros somos su único punto de contacto y respondemos por todo el proyecto.</p>
+      <p style="color:var(--text-muted);line-height:1.8;max-width:760px;">Cada proyecto tiene presupuesto detallado, cronograma y garantía. Si algo sale diferente a lo acordado, lo resolvemos nosotros.</p>
+
+      <div style="margin-top:40px">
+        <h2 class="section-title">Preguntas frecuentes</h2>
+        <div class="divider"></div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q">¿Cuánto demora una remodelación típica?<span class="arrow">▼</span></button>
+            <div class="faq-a">Depende del tamaño del proyecto. Una remodelación de baño puede tomar entre una y dos semanas. Una cocina completa puede requerir tres a cuatro semanas. Le damos un cronograma antes de empezar.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">¿Puedo vivir en mi casa durante la remodelación?<span class="arrow">▼</span></button>
+            <div class="faq-a">En la mayoría de los casos, sí, con ciertas incomodidades temporales. Le asesoramos sobre la logística según el alcance del proyecto.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-strip">
+    <h2>Transforme su espacio con Protech</h2>
+    <p>Diseño + ejecución. Un solo proveedor para toda la remodelación.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/57XXXXXXXXXX?text=Hola,%20quiero%20cotización%20de%20remodelación" target="_blank" class="btn-primary">💬 Solicitar cotización</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ COBERTURA ═══════════════════════════════ -->
+<div class="page" id="page-cobertura">
+  <section class="service-hero">
+    <div class="container">
+      <div class="breadcrumb"><span onclick="showPage('home')" style="cursor:pointer">Inicio</span> › Cobertura</div>
+      <h1>Cobertura: Servicios a Domicilio en Bogotá y Municipios de Cundinamarca</h1>
+      <p>No importa en qué zona de Bogotá esté ni si vive en un municipio cercano. Protech tiene la capacidad logística para coordinar un técnico en su ubicación.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Bogotá D.C.</span>
+      <h2 class="section-title">Todas las localidades de Bogotá</h2>
+      <div class="divider"></div>
+      <p style="color:var(--text-muted);margin-bottom:24px;">Operamos en las 20 localidades de Bogotá sin restricción de zona:</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:48px;">
+        <span class="chip">Usaquén</span><span class="chip">Chapinero</span><span class="chip">Santa Fe</span>
+        <span class="chip">San Cristóbal</span><span class="chip">Usme</span><span class="chip">Tunjuelito</span>
+        <span class="chip">Bosa</span><span class="chip">Kennedy</span><span class="chip">Fontibón</span>
+        <span class="chip">Engativá</span><span class="chip">Suba</span><span class="chip">Barrios Unidos</span>
+        <span class="chip">Teusaquillo</span><span class="chip">Los Mártires</span><span class="chip">Antonio Nariño</span>
+        <span class="chip">Puente Aranda</span><span class="chip">La Candelaria</span><span class="chip">Rafael Uribe Uribe</span>
+        <span class="chip">Ciudad Bolívar</span><span class="chip">Sumapaz</span>
+      </div>
+
+      <span class="section-label">Cundinamarca</span>
+      <h2 class="section-title">Municipios de Cundinamarca</h2>
+      <div class="divider"></div>
+      <table class="coverage-table">
+        <thead>
+          <tr><th>Municipio</th><th>Servicios disponibles</th><th>Página local</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Chía</td><td><span class="coverage-badge">Todos los servicios</span></td><td><a onclick="showPage('chia')" style="color:var(--brand-blue);cursor:pointer;font-weight:600">Ver página →</a></td></tr>
+          <tr><td>Cajicá</td><td><span class="coverage-badge">Todos los servicios</span></td><td>Próximamente</td></tr>
+          <tr><td>Zipaquirá</td><td><span class="coverage-badge">Todos los servicios</span></td><td>Próximamente</td></tr>
+          <tr><td>Soacha</td><td><span class="coverage-badge">Todos los servicios</span></td><td><a onclick="showPage('soacha')" style="color:var(--brand-blue);cursor:pointer;font-weight:600">Ver página →</a></td></tr>
+          <tr><td>Mosquera</td><td><span class="coverage-badge">Todos los servicios</span></td><td>Próximamente</td></tr>
+          <tr><td>Funza</td><td><span class="coverage-badge">Todos los servicios</span></td><td>Próximamente</td></tr>
+          <tr><td>Madrid</td><td><span class="coverage-badge">Todos los servicios</span></td><td>Próximamente</td></tr>
+          <tr><td>Cota</td><td><span class="coverage-badge">Todos los servicios</span></td><td>Próximamente</td></tr>
+          <tr><td>Sopó</td><td><span class="coverage-badge">Todos los servicios</span></td><td>Próximamente</td></tr>
+          <tr><td>Tocancipá</td><td><span class="coverage-badge">Todos los servicios</span></td><td>Próximamente</td></tr>
+          <tr><td>Tabio</td><td><span class="coverage-badge">Todos los servicios</span></td><td>Próximamente</td></tr>
+          <tr><td>La Calera</td><td><span class="coverage-badge">Todos los servicios</span></td><td>Próximamente</td></tr>
+        </tbody>
+      </table>
+      <p style="color:var(--text-muted);margin-top:20px;font-size:0.9rem;">¿Su municipio no aparece? Contáctenos de todas formas. Es posible que podamos coordinar su servicio.</p>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <div class="divider"></div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">¿Cobran recargo por ir a municipios fuera de Bogotá?<span class="arrow">▼</span></button>
+          <div class="faq-a">Puede haber un costo de desplazamiento según la distancia, pero se lo informamos antes de confirmar el servicio. Sin sorpresas.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿El tiempo de respuesta es el mismo en municipios?<span class="arrow">▼</span></button>
+          <div class="faq-a">El tiempo de llegada puede ser mayor en municipios alejados en comparación con zonas céntricas de Bogotá. Le damos un estimado realista al momento de agendar.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-strip">
+    <h2>¿Está en nuestra zona?</h2>
+    <p>Confirme su servicio ahora por WhatsApp.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/57XXXXXXXXXX?text=Hola,%20quiero%20confirmar%20si%20tienen%20cobertura%20en%20mi%20zona" target="_blank" class="btn-primary">💬 Confirmar cobertura</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ LANDING CHÍA ═══════════════════════════════ -->
+<div class="page" id="page-chia">
+  <section class="service-hero">
+    <div class="container">
+      <div class="breadcrumb"><span onclick="showPage('home')" style="cursor:pointer">Inicio</span> › <span onclick="showPage('cobertura')" style="cursor:pointer">Cobertura</span> › Chía</div>
+      <h1>Cerrajero, Plomero y Electricista a Domicilio en Chía, Cundinamarca</h1>
+      <p>Si vive en Chía y necesita un cerrajero de emergencia, un plomero para una fuga o un electricista para un corto, no tiene que buscar en Bogotá. Protech Nexus Group opera en Chía con el mismo equipo profesional, los mismos estándares y la misma garantía.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/57XXXXXXXXXX?text=Hola,%20necesito%20un%20servicio%20técnico%20en%20Chía.%20¿Están%20disponibles?" target="_blank" class="btn-primary">💬 Solicitar servicio en Chía</a>
+        <a href="tel:+57XXXXXXXXXX" class="btn-secondary">📞 Llamar</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Todos nuestros servicios, disponibles en Chía</h2>
+      <div class="divider"></div>
+      <div class="local-features">
+        <div class="local-feat" onclick="showPage('cerrajeria')">
+          <div class="local-feat-icon">🔑</div>
+          <div><div class="local-feat-title">Cerrajería 24h</div><div class="local-feat-desc">Apertura, cambio de guardas, cerraduras de seguridad, automotriz.</div></div>
+        </div>
+        <div class="local-feat" onclick="showPage('plomeria')">
+          <div class="local-feat-icon">🔧</div>
+          <div><div class="local-feat-title">Plomería</div><div class="local-feat-desc">Destape, fugas, instalaciones hidráulicas.</div></div>
+        </div>
+        <div class="local-feat" onclick="showPage('electricidad')">
+          <div class="local-feat-icon">⚡</div>
+          <div><div class="local-feat-title">Electricidad</div><div class="local-feat-desc">Cortos, instalaciones, cableado, tableros RETIE.</div></div>
+        </div>
+        <div class="local-feat" onclick="showPage('seguridad')">
+          <div class="local-feat-icon">📷</div>
+          <div><div class="local-feat-title">Seguridad electrónica</div><div class="local-feat-desc">Cámaras, alarmas, cerraduras digitales.</div></div>
+        </div>
+        <div class="local-feat" onclick="showPage('tanques')">
+          <div class="local-feat-icon">💧</div>
+          <div><div class="local-feat-title">Limpieza de tanques</div><div class="local-feat-desc">Lavado y desinfección para conjuntos y casas.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <h2 class="section-title">¿Por qué Protech en Chía?</h2>
+      <div class="divider"></div>
+      <p style="color:var(--text-muted);line-height:1.8;max-width:760px;margin-bottom:20px;">Chía ha crecido enormemente en los últimos años, con conjuntos residenciales nuevos, casas campestres y una vida comercial activa. Esto trae necesidades técnicas específicas: cerraduras modernas en conjuntos nuevos, plomería en casas campestres con tanques de reserva, instalaciones eléctricas para home office.</p>
+      <p style="color:var(--text-muted);line-height:1.8;max-width:760px;">Protech entiende esas necesidades porque operamos en la zona regularmente. No somos un servicio de Bogotá que "también" va a Chía: incluimos a Chía como parte activa de nuestra cobertura.</p>
+
+      <div style="margin-top:40px">
+        <h2 class="section-title">Preguntas frecuentes — Chía</h2>
+        <div class="divider"></div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q">¿Hay recargo por servicio en Chía?<span class="arrow">▼</span></button>
+            <div class="faq-a">Puede haber un costo de desplazamiento que se le informa antes de confirmar. Sin sorpresas ni cobros ocultos.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">¿Atienden emergencias nocturnas en Chía?<span class="arrow">▼</span></button>
+            <div class="faq-a">Sí. Nuestro servicio 24/7 aplica también para Chía. Si tiene una emergencia a cualquier hora, contáctenos.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">¿Cubren urbanizaciones y conjuntos cerrados en Chía?<span class="arrow">▼</span></button>
+            <div class="faq-a">Sí. Atendemos en conjuntos cerrados, casas campestres, apartamentos y locales comerciales en todo el municipio de Chía.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-strip">
+    <h2>Solicite su servicio en Chía</h2>
+    <p>Técnicos propios, garantía escrita, atención 24/7.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/57XXXXXXXXXX?text=Hola,%20necesito%20servicio%20técnico%20en%20Chía" target="_blank" class="btn-primary">💬 WhatsApp</a>
+      <a href="tel:+57XXXXXXXXXX" class="btn-secondary">📞 Llamar</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ LANDING SOACHA ═══════════════════════════════ -->
+<div class="page" id="page-soacha">
+  <section class="service-hero">
+    <div class="container">
+      <div class="breadcrumb"><span onclick="showPage('home')" style="cursor:pointer">Inicio</span> › <span onclick="showPage('cobertura')" style="cursor:pointer">Cobertura</span> › Soacha</div>
+      <h1>Cerrajero, Plomero y Electricista a Domicilio en Soacha, Cundinamarca</h1>
+      <p>Soacha es uno de los municipios con mayor crecimiento habitacional cerca de Bogotá, y con él vienen las necesidades técnicas: cañerías que se tapan en conjuntos nuevos, cerraduras que fallan, instalaciones eléctricas que necesitan actualización. Protech opera en Soacha con servicio a domicilio, técnicos propios y garantía escrita.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/57XXXXXXXXXX?text=Hola,%20necesito%20un%20servicio%20técnico%20en%20Soacha.%20¿Están%20disponibles?" target="_blank" class="btn-primary">💬 Solicitar servicio en Soacha</a>
+        <a href="tel:+57XXXXXXXXXX" class="btn-secondary">📞 Llamar</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Servicios técnicos disponibles en Soacha</h2>
+      <div class="divider"></div>
+      <div class="local-features">
+        <div class="local-feat" onclick="showPage('cerrajeria')">
+          <div class="local-feat-icon">🔑</div>
+          <div><div class="local-feat-title">Cerrajería 24h</div><div class="local-feat-desc">Apertura de puertas, cambio de guardas, cerraduras de seguridad. Emergencia día y noche.</div></div>
+        </div>
+        <div class="local-feat" onclick="showPage('plomeria')">
+          <div class="local-feat-icon">🔧</div>
+          <div><div class="local-feat-title">Plomería profesional</div><div class="local-feat-desc">Destape de cañerías, reparación de fugas, instalaciones. Diagnóstico real, no parches.</div></div>
+        </div>
+        <div class="local-feat" onclick="showPage('electricidad')">
+          <div class="local-feat-icon">⚡</div>
+          <div><div class="local-feat-title">Electricidad RETIE</div><div class="local-feat-desc">Cortos circuitos, puntos eléctricos, cableado, tableros.</div></div>
+        </div>
+        <div class="local-feat" onclick="showPage('seguridad')">
+          <div class="local-feat-icon">📷</div>
+          <div><div class="local-feat-title">Seguridad electrónica</div><div class="local-feat-desc">Cámaras, alarmas, cerraduras digitales.</div></div>
+        </div>
+        <div class="local-feat" onclick="showPage('tanques')">
+          <div class="local-feat-icon">💧</div>
+          <div><div class="local-feat-title">Limpieza de tanques</div><div class="local-feat-desc">Ideal para conjuntos residenciales que deben cumplir normativa de limpieza periódica.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <h2 class="section-title">Preguntas frecuentes — Soacha</h2>
+      <div class="divider"></div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">¿Atienden en todas las zonas de Soacha?<span class="arrow">▼</span></button>
+          <div class="faq-a">Sí. Cubrimos Soacha centro, Ciudad Verde, San Mateo, Compartir, Terreros, Cazucá y las demás zonas del municipio.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Cuánto cuesta un servicio en Soacha?<span class="arrow">▼</span></button>
+          <div class="faq-a">Los precios son los mismos que en Bogotá, con un posible costo de desplazamiento que le informamos al cotizar.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Atienden conjuntos residenciales en Soacha?<span class="arrow">▼</span></button>
+          <div class="faq-a">Sí. Atendemos en conjuntos cerrados, casas independientes, locales comerciales y bodegas.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-strip">
+    <h2>Solicite su servicio en Soacha</h2>
+    <p>Técnicos propios, garantía escrita, atención 24/7.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/57XXXXXXXXXX?text=Hola,%20necesito%20servicio%20técnico%20en%20Soacha" target="_blank" class="btn-primary">💬 WhatsApp</a>
+      <a href="tel:+57XXXXXXXXXX" class="btn-secondary">📞 Llamar</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ FAQ ═══════════════════════════════ -->
+<div class="page" id="page-faq">
+  <section class="service-hero">
+    <div class="container">
+      <div class="breadcrumb"><span onclick="showPage('home')" style="cursor:pointer">Inicio</span> › Preguntas Frecuentes</div>
+      <h1>Preguntas Frecuentes sobre Nuestros Servicios</h1>
+      <p>Aquí respondemos las dudas más comunes que recibimos. Si no encuentra la respuesta que busca, contáctenos directamente.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Sobre la empresa</span>
+      <h2 class="section-title">La empresa</h2>
+      <div class="divider"></div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">¿Protech Nexus Group es una empresa real o una plataforma?<span class="arrow">▼</span></button>
+          <div class="faq-a">Somos una empresa colombiana legalmente constituida (S.A.S.), con sede en Bogotá. No somos una app ni una plataforma de intermediarios. Tenemos equipo técnico propio y respondemos directamente por cada servicio.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">¿Hace cuánto operan?<span class="arrow">▼</span></button>
+          <div class="faq-a">Somos una empresa de reciente creación, pero nuestro equipo técnico tiene experiencia acumulada en el sector. Lo que nos diferencia no es la antigüedad, sino cómo trabajamos: técnicos en nómina, garantía escrita y atención real 24/7.</div>
+        </div>
+      </div>
+
+      <div style="margin-top:48px">
+        <span class="section-label">Precios y pagos</span>
+        <h2 class="section-title">Precios y pagos</h2>
+        <div class="divider"></div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q">¿Cuánto cuestan sus servicios?<span class="arrow">▼</span></button>
+            <div class="faq-a">Los precios varían según el tipo de servicio, la complejidad del trabajo y los materiales necesarios. Le damos un presupuesto claro antes de empezar para que usted decida con toda la información.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">¿Cobran la visita técnica?<span class="arrow">▼</span></button>
+            <div class="faq-a">El costo de la visita o diagnóstico depende del servicio. Le informamos antes de agendar. En muchos casos, si contrata el servicio, el valor de la visita se descuenta del total.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:48px">
+        <span class="section-label">Garantía</span>
+        <h2 class="section-title">Garantía y calidad</h2>
+        <div class="divider"></div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q">¿Ofrecen garantía?<span class="arrow">▼</span></button>
+            <div class="faq-a">Sí. Todos nuestros trabajos incluyen garantía por escrito. Los términos específicos (duración, alcance) dependen del tipo de servicio y se detallan en el certificado que le entregamos al finalizar.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">¿Qué pasa si algo sale mal después del servicio?<span class="arrow">▼</span></button>
+            <div class="faq-a">Contáctenos. Si el problema está dentro del período de garantía y es atribuible a nuestro trabajo, volvemos y lo resolvemos sin costo adicional.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:48px">
+        <span class="section-label">Cobertura</span>
+        <h2 class="section-title">Cobertura y disponibilidad</h2>
+        <div class="divider"></div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q">¿Atienden fuera de Bogotá?<span class="arrow">▼</span></button>
+            <div class="faq-a">Sí. Cubrimos municipios de Cundinamarca como Chía, Soacha, Zipaquirá, Cajicá, Mosquera y Funza, entre otros. Consulte nuestra página de cobertura para la lista completa.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">¿Realmente atienden las 24 horas?<span class="arrow">▼</span></button>
+            <div class="faq-a">Sí. Nuestro servicio funciona 24 horas al día, 7 días a la semana, los 365 días del año. Esto incluye domingos, festivos y madrugadas. Para emergencias, llámenos directamente para una respuesta más rápida.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-strip">
+    <h2>¿Tiene otra pregunta?</h2>
+    <p>Contáctenos directamente y le respondemos en minutos.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/57XXXXXXXXXX" target="_blank" class="btn-primary">💬 WhatsApp</a>
+      <a href="tel:+57XXXXXXXXXX" class="btn-secondary">📞 Llamar</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ CONTACTO ═══════════════════════════════ -->
+<div class="page" id="page-contacto">
+  <section class="service-hero">
+    <div class="container">
+      <div class="breadcrumb"><span onclick="showPage('home')" style="cursor:pointer">Inicio</span> › Contacto</div>
+      <h1>Contáctenos — Estamos Listos para Atenderle</h1>
+      <p>¿Necesita un servicio técnico? ¿Quiere cotizar un proyecto? ¿Tiene una emergencia? Escríbanos, llámenos o llene el formulario. Le respondemos en minutos.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Datos de contacto</h3>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-label">Teléfono</div>
+              <div class="contact-val">[Número principal] — disponible 24/7</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">💬</div>
+            <div>
+              <div class="contact-label">WhatsApp</div>
+              <div class="contact-val"><a href="https://wa.me/57XXXXXXXXXX" target="_blank" style="color:var(--brand-green);font-weight:600">Clic para escribirnos directamente</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <div class="contact-label">Correo electrónico</div>
+              <div class="contact-val">contacto@protechnexusgroup.com</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div>
+              <div class="contact-label">Horario</div>
+              <div class="contact-val">24 horas, 7 días a la semana, 365 días al año</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-label">Sede</div>
+              <div class="contact-val">Bogotá D.C., Colombia</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:700;margin-bottom:24px;">Envíe su solicitud</h3>
+          <form onsubmit="handleForm(event)">
+            <div class="form-field">
+              <label>Nombre</label>
+              <input type="text" placeholder="Su nombre" required>
+            </div>
+            <div class="form-field">
+              <label>Teléfono / WhatsApp</label>
+              <input type="tel" placeholder="Número de contacto" required>
+            </div>
+            <div class="form-field">
+              <label>¿Qué servicio necesita?</label>
+              <select>
+                <option value="">Seleccione un servicio</option>
+                <option>Cerrajería</option>
+                <option>Plomería</option>
+                <option>Electricidad</option>
+                <option>Seguridad electrónica</option>
+                <option>Limpieza de tanques</option>
+                <option>Diseño y remodelación</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Descripción breve (opcional)</label>
+              <textarea placeholder="Cuéntenos más sobre lo que necesita..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%;padding:14px;">Enviar solicitud</button>
+          </form>
+          <p style="font-size:0.82rem;color:var(--text-muted);margin-top:12px;">Le respondemos en menos de 30 minutos durante horario diurno. Para emergencias nocturnas, llámenos directamente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">PROTECH<span>NEXUS</span> GROUP</div>
+      <div class="footer-desc">Protech Nexus Group S.A.S. — Servicios técnicos a domicilio en Bogotá y Cundinamarca. Cerrajería, plomería, electricidad y más, con garantía escrita.</div>
+      <div class="footer-badge">🛡️ Técnicos en nómina · Garantía escrita</div>
+    </div>
+    <div class="footer-col">
+      <h4>Servicios</h4>
+      <a onclick="showPage('cerrajeria')">Cerrajería</a>
+      <a onclick="showPage('plomeria')">Plomería</a>
+      <a onclick="showPage('electricidad')">Electricidad</a>
+      <a onclick="showPage('seguridad')">Seguridad electrónica</a>
+      <a onclick="showPage('tanques')">Limpieza de tanques</a>
+      <a onclick="showPage('diseno')">Diseño de interiores</a>
+    </div>
+    <div class="footer-col">
+      <h4>Cobertura</h4>
+      <a onclick="showPage('cobertura')">Bogotá</a>
+      <a onclick="showPage('chia')">Chía</a>
+      <a onclick="showPage('soacha')">Soacha</a>
+      <a>Zipaquirá</a>
+      <a>Cajicá</a>
+      <a>Mosquera · Funza</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <a href="tel:+57XXXXXXXXXX">📞 [Teléfono]</a>
+      <a href="https://wa.me/57XXXXXXXXXX" target="_blank">💬 WhatsApp</a>
+      <a href="mailto:contacto@protechnexusgroup.com">✉️ contacto@protechnexusgroup.com</a>
+      <a>⏱️ Horario: 24/7</a>
+      <div style="margin-top:12px">
+        <a onclick="showPage('nosotros')">Sobre nosotros</a>
+        <a onclick="showPage('faq')">Preguntas frecuentes</a>
+        <a onclick="showPage('contacto')">Contacto</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Protech Nexus Group S.A.S. · Bogotá, Colombia</span>
+    <span style="display:flex;gap:20px">
+      <a href="#" style="color:rgba(255,255,255,0.4);font-size:0.8rem">Política de privacidad</a>
+      <a href="#" style="color:rgba(255,255,255,0.4);font-size:0.8rem">Términos y condiciones</a>
+    </span>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a class="wa-float" href="https://wa.me/57XXXXXXXXXX?text=Hola,%20necesito%20un%20servicio%20técnico.%20¿Están%20disponibles?" target="_blank" title="Escríbanos por WhatsApp">💬</a>
+
+<script>
+  // ─── Page routing ───
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    const page = document.getElementById('page-' + id);
+    if (page) {
+      page.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    const navEl = document.getElementById('nav-' + id);
+    if (navEl) navEl.classList.add('active');
+    // Close mobile menu
+    document.getElementById('navLinks').classList.remove('open');
+  }
+
+  // ─── FAQ accordion ───
+  document.addEventListener('click', function(e) {
+    const btn = e.target.closest('.faq-q');
+    if (!btn) return;
+    const item = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    // Close all in same list
+    item.closest('.faq-list').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+
+  // ─── Mobile menu ───
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  // ─── Form ───
+  function handleForm(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.textContent = '✅ ¡Solicitud enviada! Le contactaremos pronto.';
+    btn.style.background = 'var(--brand-blue)';
+    btn.disabled = true;
+  }
+</script>
+
+<!-- Schema JSON-LD LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Protech Nexus Group S.A.S.",
+  "description": "Servicios técnicos a domicilio en Bogotá y Cundinamarca. Cerrajería, plomería, electricidad, seguridad electrónica, limpieza de tanques y diseño de interiores.",
+  "url": "https://protechnexusgroup.com",
+  "email": "contacto@protechnexusgroup.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bogotá",
+    "addressRegion": "Cundinamarca",
+    "addressCountry": "CO"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Bogotá"},
+    {"@type": "City", "name": "Chía"},
+    {"@type": "City", "name": "Soacha"},
+    {"@type": "City", "name": "Zipaquirá"},
+    {"@type": "City", "name": "Cajicá"},
+    {"@type": "City", "name": "Mosquera"},
+    {"@type": "City", "name": "Funza"}
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  }
+}
+</script>
+
+</body>
+</html>
